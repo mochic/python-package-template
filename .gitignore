@@ -615,3 +615,6 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/osx,python,pycharm,windows,visualstudio,visualstudiocode
+sphinx/_build
+sphinx/_static
+sphinx/_templates

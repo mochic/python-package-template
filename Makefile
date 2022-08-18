@@ -95,7 +95,7 @@ cleanup: pycache-remove dsstore-remove mypycache-remove ipynbcheckpoints-remove 
 init-docs:
 	git checkout -b gh-pages
 	mkdir sphinx && cd sphinx
-	poetry add sphinx-rtd-theme
+	poetry add sphinx
 	poetry add sphinx-rtd-theme
 	poetry add sphinx-autodoc-typehints
 	poetry run sphinx-quickstart

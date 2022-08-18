@@ -90,3 +90,20 @@ build-remove:
 
 .PHONY: cleanup
 cleanup: pycache-remove dsstore-remove mypycache-remove ipynbcheckpoints-remove pytestcache-remove
+
+.PHONY: init-docs
+init-docs:
+	git checkout -b gh-pages
+	mkdir sphinx && cd sphinx
+	poetry add sphinx-rtd-theme
+	poetry add sphinx-rtd-theme
+	poetry add sphinx-autodoc-typehints
+	poetry run sphinx-quickstart
+	cd ..
+
+.PHONY: docs
+docs:
+	git checkout gh-pages
+	cd sphinx && poetry run make html && cd ..
+	cp -R sphinx/_build/html/* docs
+	touch docs/.nojekyll
